@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    scroll-behavior: smooth;
+    background-image: url("images/background.png");
+    background-size: auto;
+}
+
+.sti {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.scr {
+    scroll-margin-top: 10rem;
+}
+
+.active {
+    color: #18BFB4;
+}
