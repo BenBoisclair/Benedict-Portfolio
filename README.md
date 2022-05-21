@@ -12,3 +12,5 @@ in Javascript and REACT.
 My name is Benedit Boisclair, and I am currently in Year 2 of Chulalongkorn University. I'm taking a startup degree and my dream is to become a CTO of my
 very own company. If you ask me how far I want to take my computer science dream to, I hope to be able to write full on machine learning algorithms to
 solve issues in the world and one day use a quantum computer.
+
+Here is the website fully hosted with a domain: benedict-boisclair.com
