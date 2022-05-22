@@ -510,14 +510,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-column: span 2 / span 2;
 }
 
-.row-start-2 {
-  grid-row-start: 2;
-}
-
-.row-start-3 {
-  grid-row-start: 3;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -526,6 +518,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .mt-2 {
@@ -554,10 +550,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-20 {
   margin-top: 5rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .mt-16 {
@@ -592,10 +584,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 0.5rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .w-\[25rem\] {
   width: 25rem;
 }
@@ -606,6 +594,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-8 {
   width: 2rem;
+}
+
+.resize {
+  resize: both;
 }
 
 .list-inside {
@@ -628,20 +620,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-rows-3 {
-  grid-template-rows: repeat(3, minmax(0, 1fr));
-}
-
-.grid-rows-2 {
-  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-1 {
@@ -672,6 +652,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-x-reverse: 0;
   margin-right: calc(3rem * var(--tw-space-x-reverse));
   margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -712,27 +698,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.5rem;
 }
 
-.rounded-l-3xl {
-  border-top-left-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
-}
-
-.rounded-r-3xl {
-  border-top-right-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
-}
-
 .rounded-b-3xl {
   border-bottom-right-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
 }
 
-.rounded-tr-3xl {
-  border-top-right-radius: 1.5rem;
-}
-
 .rounded-tl-3xl {
   border-top-left-radius: 1.5rem;
+}
+
+.rounded-tr-3xl {
+  border-top-right-radius: 1.5rem;
 }
 
 .border-2 {
@@ -881,6 +857,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.5rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -924,16 +905,47 @@ html, body {
   color: #18BFB4;
 }
 
+.hamburger {
+  display: none;
+}
+
+.nav-ul li {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .nav-ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-ul li {
+    display: flex;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .dark\:bg-gray-700 {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-  }
-}
-
-@media (min-width: 640px) {
-  .sm\:hidden {
-    display: none;
   }
 }
 
@@ -950,28 +962,16 @@ html, body {
     margin-top: 2rem;
   }
 
-  .md\:mt-\[20rem\] {
-    margin-top: 20rem;
-  }
-
-  .md\:mt-\[16rem\] {
-    margin-top: 16rem;
+  .md\:mt-\[12rem\] {
+    margin-top: 12rem;
   }
 
   .md\:mt-\[14rem\] {
     margin-top: 14rem;
   }
 
-  .md\:mt-\[12rem\] {
-    margin-top: 12rem;
-  }
-
   .md\:flex {
     display: flex;
-  }
-
-  .md\:hidden {
-    display: none;
   }
 
   .md\:grid-cols-2 {
@@ -999,10 +999,6 @@ html, body {
 }
 
 @media (min-width: 1024px) {
-  .lg\:visible {
-    visibility: visible;
-  }
-
   .lg\:mt-12 {
     margin-top: 3rem;
   }
@@ -1051,16 +1047,8 @@ html, body {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .lg\:grid-rows-1 {
-    grid-template-rows: repeat(1, minmax(0, 1fr));
-  }
-
   .lg\:justify-items-center {
     justify-items: center;
-  }
-
-  .lg\:rounded-3xl {
-    border-radius: 1.5rem;
   }
 
   .lg\:rounded-l-3xl {
@@ -1073,14 +1061,8 @@ html, body {
     border-bottom-right-radius: 1.5rem;
   }
 
-  .lg\:rounded-r-none {
+  .lg\:rounded-tr-none {
     border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-
-  .lg\:rounded-b-3xl {
-    border-bottom-right-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
   }
 
   .lg\:px-16 {
@@ -1101,5 +1083,15 @@ html, body {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }

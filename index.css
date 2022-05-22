@@ -21,3 +21,42 @@ html, body {
 .active {
     color: #18BFB4;
 }
+
+.hamburger {
+    display: none;
+}
+
+.nav-ul li {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width: 767px) {
+
+    .nav-ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-ul.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-ul li {
+        display: flex;
+    }
+
+}
